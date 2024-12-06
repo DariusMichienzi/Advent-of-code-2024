@@ -37,7 +37,7 @@ end
     end
 end
 
-f =readlines("/home/er19801/julia_code/Advent-of-code-24/Day2Data.txt")
+f =readlines("/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day2Data.txt")
 P = []
 for k in eachindex(f)
     a = conv(f[k])

@@ -1,5 +1,5 @@
 @time begin
-f = "/home/er19801/julia_code/Advent-of-code-24/Day6Data.txt"
+f = "/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day6Data.txt"
 lines = readlines(f)
 list = [if i<=length(line) line[i] else "" end for line in lines for i in 1:length(lines)]
 data = rotr90(reshape(list,length(lines),length(lines)))

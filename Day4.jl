@@ -1,4 +1,5 @@
-f = "/home/er19801/julia_code/Advent-of-code-24/Day4Data.txt"
+@time begin
+f = "/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day4Data.txt"
 lines = readlines(f)
 list = [if i<=length(line) line[i] else "" end for line in lines for i in 1:length(lines)]
 data = reshape(list,length(lines),length(lines))
@@ -119,3 +120,4 @@ end
 end
 
 println("pt2 answer = ",sum(total2))
+end

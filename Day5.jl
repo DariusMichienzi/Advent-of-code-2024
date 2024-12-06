@@ -1,5 +1,6 @@
-orderfile = "/home/er19801/julia_code/Advent-of-code-24/Day5Orders.txt"
-datafile = "/home/er19801/julia_code/Advent-of-code-24/Day5Data.txt"
+@time begin
+orderfile = "/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day5Orders.txt"
+datafile = "/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day5Data.txt"
 list = [parse(Int, split(line, "|")[i]) for line in readlines(orderfile), i in 1:2]
 data = readlines(datafile)
 
@@ -33,5 +34,5 @@ for i in eachindex(data)
     end
 end
 println("pt 2 answer = ",ans2)
-
+end
 #end of part 2
