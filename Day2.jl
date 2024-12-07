@@ -1,3 +1,5 @@
+f = readlines("/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day2Data.txt")
+
 function conv(S)
     fsplit = split(S," ")
     A = []
@@ -6,6 +8,7 @@ function conv(S)
     end
     return A
 end
+
 function monotonic(A)
     asc = sort(A)
     desc = sort(A,rev=true)
@@ -37,7 +40,18 @@ end
     end
 end
 
-f =readlines("/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day2Data.txt")
+P = []
+for k in eachindex(f)
+    a = conv(f[k])
+    if monotonic(a) == true && variance(a) == true
+        push!(P,1)
+    end
+end
+ans1 = sum(P)
+println("part 1 answer = ",ans1)
+
+#end of part 1
+
 P = []
 for k in eachindex(f)
     a = conv(f[k])
@@ -61,4 +75,5 @@ for k in eachindex(f)
     end
 end
 
-println(sum(P))
+ans2 = sum(P)
+println("part 2 answer = ",ans2)

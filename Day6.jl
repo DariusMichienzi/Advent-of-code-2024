@@ -1,3 +1,5 @@
+# Part 2 takes a while to run. about 8 min with 4 threads on typhon
+
 @time begin
 f = "/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day6Data.txt"
 lines = readlines(f)
@@ -16,7 +18,7 @@ while coord[1] != 1
     coord = findfirst(x->x=='^',data)
 end
 ans1 = length(findall(x->x=='X',data))+1
-println("pt 1 answer = ",ans1)
+println("part 1 answer = ",ans1)
 
 #end of part 1 
 
@@ -55,5 +57,5 @@ end
 end 
 
 ans2 = length(loops)
-println("pt 2 answer = ",ans2)
+println("part 2 answer = ",ans2)
 end
