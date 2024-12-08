@@ -1,6 +1,5 @@
 # Part 2 takes a while to run. about 8 min with 4 threads on typhon
 
-@time begin
 f = "/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day6Data.txt"
 lines = readlines(f)
 list = [if i<=length(line) line[i] else "" end for line in lines for i in 1:length(lines)]
@@ -58,4 +57,3 @@ end
 
 ans2 = length(loops)
 println("part 2 answer = ",ans2)
-end
