@@ -7,8 +7,7 @@ data = rotl90(reshape(list,length(lines),length(lines)))
 freqs = unique(data[findall(x->x!='.',data)])
 nodes = []
 for i in eachindex(freqs)
-coords = findall(x->x==freqs[i],data)
-pairs = collect(combinations(coords, 2))
+pairs = collect(combinations(findall(x->x==freqs[i],data), 2))
 for j in eachindex(pairs)
 node1 = 2*pairs[j][2]-pairs[j][1]
 node2 = 2*pairs[j][1]-pairs[j][2]
@@ -28,14 +27,11 @@ println("part 1 answer = ",ans1)
 
 nodes2 = []
 for i in eachindex(freqs)
-coords = findall(x->x==freqs[i],data)
-pairs = collect(combinations(coords, 2))
+pairs = collect(combinations(findall(x->x==freqs[i],data), 2))
 for j in eachindex(pairs)
-    push!(nodes2,pairs[j][1])
-    push!(nodes2,pairs[j][2])
     diff  = pairs[j][2]-pairs[j][1]
-    node1 =  pairs[j][2] + diff
-    node2 =  pairs[j][1] - diff
+    node1 =  pairs[j][2]
+    node2 =  pairs[j][1]
     while checkbounds(Bool, data, node1) == true   
     push!(nodes2,node1)
         node1 += diff
