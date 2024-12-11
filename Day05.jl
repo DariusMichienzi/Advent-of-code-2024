@@ -13,25 +13,18 @@ function lookuplessthan(a,b)
 end
 
 ans1 = 0
+ans2 = 0 
 for i in eachindex(data)
     dataline  = parse.(Int,split(data[i],","))
     ordereddata = sort!(parse.(Int,split(data[i],",")),lt=lookuplessthan)
     if ordereddata == dataline
         ans1 += dataline[Int((length(dataline)+1)/2)]
+    else
+        ans2 += ordereddata[Int((length(ordereddata)+1)/2)]
     end
 end
 println("part 1 answer = ",ans1)
 
 #end of part 1 
 
-ans2 = 0 
-for i in eachindex(data)
-    dataline  = parse.(Int,split(data[i],","))
-    ordereddata = sort!(parse.(Int,split(data[i],",")),lt=lookuplessthan)
-    if ordereddata != dataline
-        ans2 += ordereddata[Int((length(ordereddata)+1)/2)]
-    end
-end
 println("part 2 answer = ",ans2)
-
-#end of part 2
