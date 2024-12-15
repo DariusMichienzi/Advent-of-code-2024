@@ -9,17 +9,14 @@ added = falses(size(data))
 ans1 = 0
 ans2 = 0
 for i in CartesianIndices(data)
-if added[i] == true
-    continue
-end
+if added[i] == false
 crop = [i]
 added[i] = true
 area = 0
 perimiter = 0
 edges = 0
-while length(crop) !=0
+while length(crop) != 0
     test = popfirst!(crop)
-    area += 1
     neighbours = 0 
     vertecies = 0 
     for i in 1:4
@@ -37,13 +34,17 @@ while length(crop) !=0
             vertecies += 1
         end
     end
+    area += 1
     edges += vertecies
     perimiter += (4-neighbours)
 end
 ans1 += area*perimiter
 ans2 += area*edges
 end
+end
 
 println("part 1 answer = ",ans1)
+
 #end of part 1 
+
 println("part 2 answer = ",ans2)
