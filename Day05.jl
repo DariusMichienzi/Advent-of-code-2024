@@ -3,6 +3,7 @@ datafile = "/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day5Data.txt"
 list = [parse(Int, split(line, "|")[i]) for line in readlines(orderfile), i in 1:2]
 data = readlines(datafile)
 
+
 function lookuplessthan(a,b)
     index = findall(x -> x == a, list[:,1])
     if b in list[index,2]
