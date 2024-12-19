@@ -1,5 +1,4 @@
-# Part 2 takes a while to run. about 8 min with 4 threads on typhon
-
+# Part 2 takes a while to run. about 8 min on typhon
 f = "/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day6Data.txt"
 lines = readlines(f)
 list = [if i<=length(line) line[i] else "" end for line in lines for i in 1:length(lines)]

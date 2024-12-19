@@ -1,16 +1,16 @@
 f = "/home/er19801/julia_code/Advent-of-code-24/Datafiles/Day18Data.txt"
 lines = readlines(f)
-coords = [((parse(Int,line[2]),parse(Int,line[1]))) for line in split.(lines,",")]
+coords = [((parse(Int,line[1]),parse(Int,line[2]))) for line in split.(lines,",")]
 
-size = (70,70)
-memory = fill(0,size.+(1,1))
+sizes = (70,70)
+memory = fill(0,sizes.+(1,1))
 
 for i in 1:1024
     memory[CartesianIndex(coords[i].+(1,1))] = -1
 end
 
 start = (1,1)
-finish = size.+(1,1)
+finish = sizes.+(1,1)
 directions = [(0,1),(1,0),(0,-1),(-1,0)]
 
 function steps(mem)
@@ -37,7 +37,7 @@ ans2 = 0
 for c in coords[1025:end]
     memory2[CartesianIndex(c.+(1,1))] = -1
     if steps(memory2) == 0 
-        ans2 = reverse(c)
+        ans2 = c
        break
     end
 end

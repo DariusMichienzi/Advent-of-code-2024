@@ -4,7 +4,7 @@ list = [if i<=length(line) line[i] else "" end for line in lines for i in 1:leng
 data = reshape(list,length(lines),length(lines))
 
 directions = [CartesianIndex(0,1),CartesianIndex(1,0),CartesianIndex(0,-1),CartesianIndex(-1,0)]
-added = falses(size(data))
+added = falses(length(lines),length(lines))
 
 ans1 = 0
 ans2 = 0

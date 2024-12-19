@@ -13,28 +13,21 @@ while point<length(program)
     opcode = program[point+1]
     operand = program[point+2]
     combo = regs[operand+1]
-
 if opcode == 0 
     regs[5] = regs[5] >> combo
-
 elseif opcode == 1
     regs[6] = xor(regs[6],operand)
-
 elseif opcode == 2
     regs[6] = mod(combo,8)
-
 elseif opcode == 3 && regs[5] !=0
     point = operand
     continue
 elseif opcode == 4
     regs[6] = xor(regs[6],regs[7])
-
 elseif opcode == 5
     push!(output,mod(combo,8))
-
 elseif opcode == 6
     regs[6] = regs[5] >> combo
-
 elseif opcode == 7
     regs[7] = regs[5] >> combo
 end

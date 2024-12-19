@@ -60,7 +60,3 @@ append!(a,findall(visits[:,:,3].==1))
 append!(a,findall(visits[:,:,4].==1))
 ans2 = length(unique!(a))
 println("part 2 answer = ",ans2)
-
-tiles = reduce(|, visits; dims=3)
-using Plots
-plot(heatmap(tiles[:,:,1]))
