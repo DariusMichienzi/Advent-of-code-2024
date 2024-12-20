@@ -74,7 +74,6 @@ function timesaved(distance)
     return timesave
 end
 
-
 timesaved1 = timesaved(2)
 ans1 = length(findall(timesaved1 .>= 100))
 println("part 1 answer = ",ans1)
